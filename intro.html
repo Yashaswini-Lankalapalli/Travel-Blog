@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Lobster+Two&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color:#D4F1F4;
+            border: 15px solid #189AB4;
+        }
+        #rightcon{
+            background-image: linear-gradient(#D4F1F4,#189AB4);
+        }
+        p, #rightcon, .scroll{
+            color:#05445E;
+            font-size: 20px;
+            font-family: "Lobster Two", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .para{
+            margin-left: 20px;
+            margin-top: 40px;
+            margin-right: 10px;
+        }
+        a, li{
+            color: #189AB4;
+        }
+        img{
+            height: 200px;
+            width: 200px;
+            margin-bottom: 5px;
+        }
+                
+    </style>
+</head>
+<body>
+    <div class="container-fluid row">
+        <nav class="navbar navbar-expand">
+           <div class="col"><li class="navbar"><a href="./travel_blog.html" style="text-decoration: none;"><b>Travel Blog</b></a></li></div> 
+           <div class="col"><li class="navbar"><a href="./cities.html" style="text-decoration: none;"><b>Current time</b></a></li></div> 
+           <div class="col"><li class="navbar"><a href="./travel_blog.html" style="text-decoration: none;"><b>About</b></a></li></div>          
+           <div class="col"><li class="navbar"><a href="" style="text-decoration: none;"><b>Feedback</b></a></li></div>
+           <div class="col"><li class="navbar"><a href="./contact.html" style="text-decoration: none;"><b>Contact Us</b></a></li></div>
+        </nav><hr style="border: 5px solid #189AB4;">
+        <img src="./images/airplane.png" alt="to travel is to live"><hr style="border: 5px solid #189AB4;">
+        <marquee class="scroll" behavior="scroll" direction="left" scrollamount="5">Embark on a journey of discovery with us! 
+            Explore breathtaking landscapes, immerse yourself in vibrant cultures, and create unforgettable 
+            memories. From serene beaches to majestic mountains, our travel blog is your guide to extraordinary 
+            adventures.</marquee><br>
+        <hr style="border: 5px solid #189AB4;">
+    </div>
+    <div class="container-fluid para">
+        <div class="row">
+            <div id="leftcon" class="col-sm-5">
+                <p><span style="font-size: 50px;">Welcome to our travel blog</span>, where we invite 
+                    you to embark on a journey of discovery through the enchanting cities of the 
+                    world. Nestled between rugged mountains and 
+                sparkling coastlines, each city boasts a rich tapestry of history, culture, and 
+                natural beauty waiting to be explored. As you wander through their winding streets 
+                and iconic landmarks, you'll find yourself enchanted by the allure of these vibrant 
+                urban oases. <br><br>
+                Delve into the storied past of these cities, where ancient civilizations once 
+                thrived and modernity now reigns supreme. From their origins as humble settlements 
+                to their rise as bustling metropolises, each city has evolved over the centuries, leaving 
+                behind legacies of architectural marvels, cultural landmarks, and fascinating anecdotes. 
+                Whether you're tracing the footsteps of emperors and conquerors through historic sites and 
+                museums or strolling through charming neighborhoods lined with centuries-old buildings and 
+                quaint cafes, each city offers a captivating glimpse into its past, inviting you to uncover 
+                its secrets and stories. <br>
+                But these cities are not just relics of bygone eras; they're dynamic hubs pulsating with 
+                life and energy at every corner. Join us as we explore the vibrant streets of these cities, 
+                where tradition meets modernity in a seamless fusion of old-world charm and contemporary 
+                allure. Indulge your senses in bustling markets overflowing with exotic spices and colorful 
+                textiles, or savor the flavors of their diverse culinary scenes in eclectic restaurants and 
+                street food stalls. Whether you're a history enthusiast, a foodie, or an urban adventurer, 
+                our comprehensive guides will lead you on curated journeys through each city's top attractions 
+                and hidden gems, ensuring unforgettable experiences that capture the essence of these 
+                captivating destinations.</p>
+            </div>
+            <div class="col-sm-2"></div>
+            <div id="rightcon" class="col-sm-4">
+                <h1>Cities Explored So Far...</h1>
+                <div id="exp">
+                <ul style="padding-left: 17px;">
+                    <li><a href="./cities/hyderabad.html">Hyderabad</a></li>
+                    <li><a href="./cities/tokyo.html">Tokyo</a></li>
+                    <li><a href="./cities/barcelona.html">Barcelona</a></li>
+                    <li><a href="./cities/paris.html">Paris</a></li>
+                    <li><a href="./cities/delhi.html">Delhi</a></li>
+                </ul>
+                </div><hr>
+               <h1>Cities To Be Explored...</h1>
+               <li>Amsterdam</li>
+                <li>London</li>
+                <li>Istanbul</li>
+                <li>Jaipur</li>
+                <li>Sydney</li>
+                <li>Venice</li>
+                <li>New York</li>
+            </div>
+        </div>  
+    </div>
+</body>
+<script>
+ function addCityToList(cityName, mail, about, food, guide) {
+  // Create a new list item
+  var newItem = document.createElement("li");
+
+  // Create a new anchor tag
+  var anchor = document.createElement("a");
+  anchor.textContent = cityName;
+  anchor.href = "#"; // Set href to "#" to prevent navigation
+
+  // Add an event listener to the anchor tag to display other details from the form when clicked
+  anchor.addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the default behavior of the anchor tag
+    
+    console.log("City Name:", cityName);
+    console.log("Mail:", mail);
+    console.log("About:", about);
+    console.log("Food:", food);
+    console.log("Guide:", guide);
+    
+    // Populate form fields with other details from localStorage
+    document.getElementById("name").value = cityName;
+    document.getElementById("mail").value = mail;
+    document.getElementById("abt").value = about;
+    document.getElementById("food").value = food;
+    document.getElementById("guide").value = guide;
+  });
+
+  // Append the anchor tag to the list item
+  newItem.appendChild(anchor);
+
+  // Get the list where you want to add the new city
+  var list = document.getElementById("exp");
+
+  // Append the new item to the list
+  list.appendChild(newItem);
+}
+
+// Function to get the city name from localStorage and add it to the list
+function addCityFromLocalStorage() {
+  // Retrieve the city name and other details from localStorage
+  var cityName = localStorage.getItem("cityName");
+  var mail = localStorage.getItem("mail");
+  var about = localStorage.getItem("about");
+  var food = localStorage.getItem("food");
+  var guide = localStorage.getItem("guide");
+
+  // If city name exists, add it to the list
+  if (cityName) {
+    addCityToList(cityName, mail, about, food, guide);
+  }
+}
+
+// Call the function to add the city from localStorage when the page loads
+window.onload = addCityFromLocalStorage;
+
+
+
+
+</script>
+</html>
